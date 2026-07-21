@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録 - Logmo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="アプリのロゴ" class="logo-img">
+            <h1 class="app-name">Logmo</h1>
+        </div>
+
+        <div id="errorArea" style="display: none; padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 15px; text-align: center; background-color: #ffebee; color: #c62828;"></div>
+
+        <form id="registerForm" class="login-form">
+            <div class="input-group">
+                <label for="user_id">ID</label>
+                <input type="text" id="user_id" name="user_id" placeholder="IDを入力" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">パスワード</label>
+                <input type="password" id="password" name="password" placeholder="パスワードを入力" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password_confirm">パスワード（確認用）</label>
+                <input type="password" id="password_confirm" name="password_confirm" placeholder="もう一度パスワードを入力" required>
+            </div>
+
+            <button type="submit" class="login-btn">登録する</button>
+        </form>
+
+        <div class="register-link">
+            <a href="index.html">ログインはこちら</a>
+        </div>
+    </div>
+
+    <script src="js/register.js" defer></script>
+</body>
+</html>

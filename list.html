@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全項目一覧 (タブ型) - Logmo</title>
+    <link rel="stylesheet" href="css/list.css">
+    <script src="js/modal.js" defer></script>
+</head>
+<body>
+
+    <header class="app-header">
+        <img src="img/logo.png" alt="ロゴ" class="logo-img-small">
+        <h2>Logmo</h2>
+    </header>
+
+    <!-- 🔍 検索・ソートエリア（クラス名ですっきり配置） -->
+    <div class="search-sort-container">
+        <div class="search-inputs-wrap">
+            <input type="text" id="searchName" placeholder="名前で検索..." class="search-input-text">
+            <div class="search-date-wrap">
+                <span class="search-label">日付で検索:</span>
+                <input type="date" id="searchDate" class="search-input-date">
+                <button id="clearDateBtn" class="clear-date-btn">クリア</button>
+            </div>
+        </div>
+        <div class="sort-select-wrap">
+            <span class="search-label">並び替え:</span>
+            <select id="sortOrder" class="sort-select">
+                <option value="date_near">📅 期日が近い順</option>
+                <option value="date_far">⏳ 期日が遠い順</option>
+                <option value="title_asc">🔤 名前順（昇順）</option>
+                <option value="title_desc">🔤 名前順（降順）</option>
+            </select>
+        </div>
+    </div>
+
+    <nav class="page-navigation">
+        <div class="nav-links">
+            <a href="home.html" class="nav-btn">◀ ホームへ</a>
+            <a href="calender.html" class="nav-btn">📅 カレンダーへ</a>
+        </div>
+        <button class="add-new-btn">＋ 新規追加</button>
+    </nav>
+
+    <div class="tab-navigation">
+        <button class="tab-btn active" data-type="habit">🔄 習慣</button>
+        <button class="tab-btn" data-type="task">📋 タスク</button>
+        <button class="tab-btn" data-type="schedule">📅 予定</button>
+    </div>
+
+    <main class="tab-content" id="tabContent">
+        <p style="text-align: center; color: #999;">データを読み込み中...</p>
+    </main>
+
+    <script src="js/item-actions.js" defer></script>
+    <script src="js/list.js" defer></script>
+</body>
+</html>

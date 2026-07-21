@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月間カレンダー - Logmo</title>
+    <link rel="stylesheet" href="css/calender.css">
+    <script src="js/item-actions.js" defer></script>
+    <script src="js/calender.js" defer></script>
+    <script src="js/modal.js" defer></script>
+</head>
+<body>
+    
+    <header class="app-header">
+        <img src="img/logo.png" alt="ロゴ" class="logo-img-small">
+        <h2>Logmo</h2>
+    </header>
+
+    <nav class="page-navigation">
+        <div class="nav-links">
+            <a href="home.html" class="nav-btn">◀ ホームへ</a>
+            <a href="list.html" class="nav-btn">📝 全データ一覧へ</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="monthly-calendar">
+            
+            <div class="calendar-inside-header">
+                <button class="cal-nav-btn" id="prevMonth">＜</button>
+                <h3 class="current-month" id="currentMonthText">2026年 6月</h3>
+                <button class="cal-nav-btn" id="nextMonth">＞</button>
+            </div>
+            <div class="weekdays">
+                <div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div class=\"saturday\">土</div><div class=\"sunday\">日</div>
+            </div>
+            <div class="days-grid" id="daysGrid"></div>
+        </div>
+
+        <section class="task-section">
+            <div class="section-header">
+                <h3 id="selectedDateText">日付を選択してください</h3>
+                <button class="add-btn" id="openAddModal">＋ 追加</button>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-type="all">すべて</button>
+                <button class="filter-btn" data-type="habit">習慣</button>
+                <button class="filter-btn" data-type="task">タスク</button>
+                <button class="filter-btn" data-type="schedule">予定</button>
+            </div>
+
+            <div id="calendarTaskContainer">
+                </div>
+        </section>
+
+        <aside class="ai-advice">
+            <h4>🤖 AIアドバイス</h4>
+            <p id="calendarAiAdvice">日付を選択すると、その日の予定に合わせたアドバイスが表示されます。</p>
+        </aside>
+    </main>
+
+    <!-- ★モーダルは js/modal.js が home.html と同じ本格的なフォームを自動で挿入します -->
+
+</body>
+</html>

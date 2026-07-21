@@ -1,0 +1,317 @@
+/* =========================================
+   全項目一覧 (タブ型) 専用CSS
+   ========================================= */
+
+/* 画面全体の基本設定 */
+body {
+    background-color: #e0f2f1;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #333333;
+    padding: 20px;
+    max-width: 600px; /* スマホやタブレットで見やすい幅に制限 */
+    margin: 0 auto;
+}
+
+/* アプリヘッダー */
+.app-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-img-small {
+    width: 70px;
+    height: auto;
+}
+
+.app-header h2 {
+    margin: 0;
+    color: #00838f;
+}
+
+/* ページナビゲーションと追加ボタン */
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #ffffff;
+    color: #00838f;
+    text-decoration: none;
+    border: 1px solid #00838f;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.nav-btn:hover { background-color: #e0f7fa; }
+
+.add-new-btn {
+    background-color: #00838f;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-new-btn:hover { background-color: #006064; }
+
+/* =========================================
+   タブナビゲーションのデザイン
+   ========================================= */
+.tab-navigation {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 14px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #777777;
+    background-color: #f9f9f9;
+    border: none;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* 選択中のタブ */
+.tab-btn.active {
+    background-color: #ffffff;
+    color: #00838f;
+    border-bottom: 4px solid #00838f;
+}
+
+/* =========================================
+   各カードのデザイン
+   ========================================= */
+.item-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border-left: 6px solid #ccc; /* 基本の左線（ジャンルで色を変える） */
+}
+
+/* ジャンルごとのアクセントカラー */
+.card-habit { border-left-color: #26c6da; } /* 習慣は水色 */
+.card-task  { border-left-color: #ffb74d; } /* タスクはオレンジ */
+.card-schedule { border-left-color: #ab47bc; } /* 予定は紫 */
+
+/* カードの見出しエリア */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.item-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #006064;
+}
+
+/* ステータスバッジ */
+.status-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.status-ongoing { background-color: #e8f5e9; color: #2e7d32; }
+.status-todo { background-color: #fff3e0; color: #ef6c00; }
+.status-done { background-color: #e3f2fd; color: #1565c0; }
+
+/* 習慣の継続日数 */
+.streak-info {
+    font-size: 12px;
+    color: #ff6f00;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* 詳細のテキスト */
+.detail-info {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 16px;
+    background-color: #fafafa;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #00838f;
+    display: inline-block;
+    width: 45px;
+}
+
+/* 変更・削除ボタンのエリア */
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 12px;
+}
+
+.control-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* 完了ボタン */
+.btn-complete {
+    background-color: #ffffff;
+    color: #2e7d32;
+    border: 1px solid #81c784;
+}
+.btn-complete:hover { background-color: #e8f5e9; }
+
+/* 完了を取り消す（戻す）ボタン */
+.btn-revert {
+    background-color: #ffffff;
+    color: #757575;
+    border: 1px solid #bdbdbd;
+}
+.btn-revert:hover { background-color: #f5f5f5; }
+
+/* 変更ボタン */
+.btn-edit {
+    background-color: #ffffff;
+    color: #e65100;
+    border: 1px solid #ffb74d;
+}
+.btn-edit:hover { background-color: #fff3e0; }
+
+/* 削除ボタン */
+.btn-delete {
+    background-color: #ffffff;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+.btn-delete:hover { background-color: #ffebee; }
+
+/* =========================================
+   検索・ソートエリア専用CSS
+   ========================================= */
+.search-sort-container {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.search-inputs-wrap {
+    margin-bottom: 12px;
+}
+
+.search-input-text {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b2dfdb;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: border-color 0.2s;
+}
+
+.search-input-text:focus,
+.search-input-date:focus,
+.sort-select:focus {
+    border-color: #00838f;
+    outline: none;
+}
+
+.search-date-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #555555;
+    white-space: nowrap; /* スマホで文字が折り返さないように保護 */
+}
+
+.search-input-date {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #b2dfdb;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #333333;
+}
+
+.clear-date-btn {
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #eceff1;
+    color: #607d8b;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.clear-date-btn:hover {
+    background-color: #cfd8dc;
+}
+
+.sort-select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #eceff1;
+    padding-top: 12px;
+}
+
+.sort-select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #b2dfdb;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 13px;
+    color: #333333;
+    cursor: pointer;
+}
