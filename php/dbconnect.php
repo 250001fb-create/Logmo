@@ -1,12 +1,13 @@
 <?php
 // dbconnect.php
+require_once './env.php';
 
 function connectDB() {
     // ※環境に合わせてユーザー名やパスワードを変更してください
-    $host = 'localhost';
-    $dbname = 'myapp'; // さっき決めたDB名
-    $user = 'root'; // MySQLのユーザー名
-    $pass = '';     // MySQLのパスワード
+    $host = DB_HOST;
+    $dbname = DB_NAME; // さっき決めたDB名
+    $user = DB_USER; // MySQLのユーザー名
+    $pass = DB_PASS;     // MySQLのパスワード
 
     $dsn = "mysql:host={$host};dbname={$dbname};charset=utf8mb4";
 
